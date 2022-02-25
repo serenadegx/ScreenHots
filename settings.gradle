@@ -1,0 +1,3 @@
+rootProject.name = "ScreenHots"
+include ':app'
+include ':screenhots'
