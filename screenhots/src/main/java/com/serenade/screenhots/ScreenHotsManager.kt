@@ -95,7 +95,7 @@ class ScreenHotsManager private constructor() {
             activityManager.runningAppProcesses
         if (appProcesses.isEmpty()) return false
         for (appProcess in appProcesses) {
-            if (appProcess.processName.equals(context.packageName) && appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND){
+            if (appProcess.processName.contains(context.packageName) && appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND){
                 return true
             }
         }
