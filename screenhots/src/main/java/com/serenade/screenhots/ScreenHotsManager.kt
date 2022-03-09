@@ -75,7 +75,9 @@ class ScreenHotsManager private constructor() {
                 if (path.isEmpty() || path == mPath) return
                 Log.d(TAG, "ScreenShotContentObserver success, path is $path,dateTaken:$dateTaken")
                 this@ScreenHotsManager.mPath = path
-                block(path)
+                Handler(Looper.getMainLooper()).post {
+                    block(path)
+                }
             }
         })
     }
